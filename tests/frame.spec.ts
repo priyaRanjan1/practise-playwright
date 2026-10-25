@@ -22,6 +22,6 @@ test.only('pop',async({page})=>{
     //await page.locator('#Tabbed button').click()
     const ref=await popup
     await ref.getByText('Downloads').click()
-    await page.bringToFront()
+    //await page.bringToFront()
 
 })
