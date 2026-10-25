@@ -21,7 +21,8 @@ test.only('pop',async({page})=>{
     await page.locator('[href="http://www.selenium.dev"]').click()
     //await page.locator('#Tabbed button').click()
     const ref=await popup
-    await ref.getByText('Downloads').click()
-    //await page.bringToFront()
+    //await ref.getByText('Downloads').click()
+    await page.bringToFront()
+
 
 })
