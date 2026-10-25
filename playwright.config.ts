@@ -28,7 +28,7 @@ export default defineConfig({
     // 2. Timeout for assertions like expect(locator).toBeVisible() (Default is 5000ms)
     timeout: 10 * 1000, // Increased to 10 seconds
   },
-  reporter: 'html',
+  reporter: [['html'],['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */

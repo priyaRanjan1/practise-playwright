@@ -7,7 +7,7 @@ test.beforeEach(async({page})=>{
     await lp.launchUrl(data.url)
 })
 test.describe('login validatio smoketesting',async()=>{
-    test.fixme('login success',async({page})=>{
+    test('login success',async({page})=>{
     await lp.logintoapp(data.email,data.pasword)
     await expect(page).toHaveURL(data.successmessage)
 })
