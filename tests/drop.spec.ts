@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test'
+test('drop',async({page})=>{
+    await page.goto('https://testautomationpractice.blogspot.com/')
+    const drop=await page.locator('div.dropdown')
+    await drop.scrollIntoViewIfNeeded()
+    
+    await drop.click()
+    await drop.getByText('Mobiles').click()
+    await page.locator('#draggable').hover()
+    await page.mouse.down()
+    await page.locator('#droppable').hover()
+    await page.mouse.up()
+    await page.goto('https://demoqa.com/automation-practice-form')
+    await page.locator('#firstName').fill('rameh')   
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.type('s')
+    await page.waitForTimeout(5000)
+    await expect(page.locator('')).toBeEmpty()
+    await page.ariaSnapshotJSON()
+})
